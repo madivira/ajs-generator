@@ -1,11 +1,9 @@
 class Team {
-  // создать метод для добавления в объект итератора и тогда он сможет перебирать объект
-
   constructor(array) {
     this.array = array;
   }
 
-  * [Symbol.iterator]() { // краткая запись для [Symbol.iterator]: function*()
+  * [Symbol.iterator]() { 
     for (let value = 0; value < this.array.length; value += 1) {
       yield this.array[value];
     }
@@ -45,7 +43,6 @@ const persons = new Team([{
 
 
 const genetator = persons[Symbol.iterator]();
-
 
 console.log(genetator.next().value);
 console.log(genetator.next().value);
