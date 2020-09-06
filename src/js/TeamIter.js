@@ -4,7 +4,7 @@ class Team {
   }
 
   [Symbol.iterator]() {
-    return this.next();
+    return this.next.bind(this);
   }
 
   next() {
@@ -50,3 +50,6 @@ const person = new Team([{
 for (const per of person.array) {
   console.log(per);
 }
+
+let per = person.array[Symbol.iterator]();
+per.next();

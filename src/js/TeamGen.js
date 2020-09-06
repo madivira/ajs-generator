@@ -4,11 +4,10 @@ class Team {
   }
 
   * [Symbol.iterator]() { 
-    for (let value = 0; value < this.array.length; value += 1) {
-      yield this.array[value];
+        for (let value = 0; value < this.array.length; value += 1) {
+          yield this.array[value];
+        }
     }
-    return { done: true };
-  }
 }
 
 const persons = new Team([{
