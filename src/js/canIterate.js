@@ -1,7 +1,10 @@
 function canIterate(iter) {
   try {
-    iter[Symbol.iterator]().next().done;
-    return true;
+    if(iter[Symbol.iterator]) {
+        return true
+    }else{
+        return false;
+    }
   } catch (e) {
     return false;
   }
